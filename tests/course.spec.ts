@@ -12,6 +12,7 @@ test.describe('Test Suite', async () => {
 
     await test.step('Then the user can see the page title', async() => {
       await expect(page).toHaveTitle(/Playwright/);
+      await page.screenshot({ path: "./captures/" + Date.now() + "screenshot.jpg"});
     });
 
   });
@@ -28,6 +29,7 @@ test.describe('Test Suite', async () => {
 
     await test.step('Then user expects to see the Intallation title', async () => {
       await expect(page.getByRole('heading', { name: 'Installation' })).toBeVisible();
+      await page.screenshot({ path: "./captures/" + Date.now() + "screenshot.jpg"});
     });
 
   });
