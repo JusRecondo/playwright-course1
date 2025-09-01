@@ -70,6 +70,12 @@ test.describe('Name field', () => {
     await nameField.focus();
     await expect(nameField).toBeFocused();
   });
+
+  test('Name field can be filled', async ({ page }) => {
+    const nameField = page.locator("//input[@id='name']")
+    await nameField.fill('John');
+    await expect(nameField).toHaveValue('John');
+  });
 });
 
 test.describe('Email field', () => {
@@ -86,5 +92,11 @@ test.describe('Email field', () => {
     const emailField = page.locator("//input[@id='email']")
     await emailField.focus();
     await expect(emailField).toBeFocused();
+  });
+
+  test('Email field can be filled', async ({ page }) => {
+    const emailField = page.locator("//input[@id='email']")
+    await emailField.fill('example@test.com');
+    await expect(emailField).toHaveValue('example@test.com');
   });
 });
