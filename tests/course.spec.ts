@@ -102,3 +102,14 @@ test.describe('Email field', () => {
     await expect(emailField).toHaveValue('example@test.com');
   });
 });
+
+test.describe('Complete Form', async () => {
+  test('User fills form', async ({ page }) => {
+    await page.goto("https://testertestarudo.com/sandbox-para-pruebas-automatizadas/");
+    await page.fill("//input[@id='name']", "Jus");
+    await page.fill("//input[@id='email']", "jus@test.com");
+    await page.fill("//input[@id='ageSlider']", "31");
+    await page.click("//input[@type='submit']");
+    await expect(page.locator("//*[text()='Form submitted!']")).toBeVisible();
+  });
+});
