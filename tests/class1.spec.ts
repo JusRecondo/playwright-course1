@@ -5,7 +5,7 @@ import { test, expect } from '@playwright/test';
 test.describe('Page title', () => {
   test('Has title', async ({ page }) => {
     await page.goto("http://opencart.abstracta.us/");
-    const title = page.getByRole('heading', { name: 'Your Store'})
+    const title = page.getByRole('heading', { name: 'Your Store' });
     await expect(title).toBeVisible();
   });
 });
@@ -21,7 +21,7 @@ test.describe('Shop searchbar', () => {
   });
 
   test('Searchbar can be filled', async ({ page }) => {
-    const searchField = page.getByPlaceholder('Search') 
+    const searchField = page.getByPlaceholder('Search');
     await searchField.fill('Iphone');
     await expect(searchField).toHaveValue('Iphone');
   });
@@ -44,7 +44,7 @@ test.describe("Product Item", () => {
 
   test('Product click goes to product detail', async ({ page }) => {
     await product.click();
-    const productTitle = page.getByRole('heading', { name: 'MacBook' })
+    const productTitle = page.getByRole('heading', { name: 'MacBook' });
     await expect(productTitle).toBeVisible();
   });
 
@@ -59,20 +59,20 @@ test.describe('Name field', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto("https://testertestarudo.com/sandbox-para-pruebas-automatizadas/");
   });
-  
+
   test('Form has name field', async ({ page }) => {
-    const nameField = page.locator("//input[@id='name']")
+    const nameField = page.locator("//input[@id='name']");
     await expect(nameField).toBeVisible();
   });
 
   test('Name field can be focused', async ({ page }) => {
-    const nameField = page.locator("//input[@id='name']")
+    const nameField = page.locator("//input[@id='name']");
     await nameField.focus();
     await expect(nameField).toBeFocused();
   });
 
   test('Name field can be filled', async ({ page }) => {
-    const nameField = page.locator("//input[@id='name']")
+    const nameField = page.locator("//input[@id='name']");
     await nameField.fill('John');
     await expect(nameField).toHaveValue('John');
   });
@@ -82,20 +82,20 @@ test.describe('Email field', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto("https://testertestarudo.com/sandbox-para-pruebas-automatizadas/");
   });
-  
+
   test('Form has email field', async ({ page }) => {
-    const emailField = page.locator("//input[@id='email']")
+    const emailField = page.locator("//input[@id='email']");
     await expect(emailField).toBeVisible();
   });
 
   test('Email field can be focused', async ({ page }) => {
-    const emailField = page.locator("//input[@id='email']")
+    const emailField = page.locator("//input[@id='email']");
     await emailField.focus();
     await expect(emailField).toBeFocused();
   });
 
   test('Email field can be filled', async ({ page }) => {
-    const emailField = page.locator("//input[@id='email']")
+    const emailField = page.locator("//input[@id='email']");
     await emailField.fill('example@test.com');
     await expect(emailField).toHaveValue('example@test.com');
   });
