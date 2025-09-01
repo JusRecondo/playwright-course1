@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-// First tests, locators
+// CLASS 1 - First tests, locators
 
 // Shop sandbox http://opencart.abstracta.us/
 // Page title
