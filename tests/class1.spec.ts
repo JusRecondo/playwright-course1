@@ -1,5 +1,7 @@
 import { test, expect } from '@playwright/test';
 
+// First tests, locators
+
 // Shop sandbox http://opencart.abstracta.us/
 // Page title
 test.describe('Page title', () => {
